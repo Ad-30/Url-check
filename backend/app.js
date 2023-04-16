@@ -16,7 +16,7 @@ app.post('/url', async (req, res) => {
   const { url } = req.body;
 
   try {
-    const options = { key: 'AIzaSyAZ87QCRhssiLv2xKoUu6U-iBpJzBIy3kk' };
+    const options = { key: process.env.GOOGLE_API_KEY };
     const data = await psi(url, options);
     console.log("Success");
     res.json(data);
